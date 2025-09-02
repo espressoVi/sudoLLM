@@ -28,3 +28,10 @@ If you find any material from this repository helpful, please cite our paper.
 
 > [!WARNING]
 > Update citation after anthology.
+
+## Authors / Contributors
+
+* [Soumadeep Saha](https://espressovi.github.io)
+* [Akshay Chaturvedi](https://scholar.google.com/citations?user=28DvXUAAAAAJ&hl=en)
+* [Joy Mahapatra](https://dblp.org/pid/188/9220.html)
+* [Utpal Garain](https://isical.ac.in/~utpal)
