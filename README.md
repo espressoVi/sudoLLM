@@ -2,9 +2,7 @@
 
 This repository contains code and data required to reproduce the main results
 for the paper titled - "_sudoLLM: On Multi-role Alignment of Language Models_",
-accepted to EMNLP 2025 (Findings).
-
-[:email:](mailto:soumadeep.saha97@gmail.com) | [:notebook:](https://arxiv.org/abs/2505.14607)
+accepted to EMNLP 2025 (Findings). [:notebook:](https://arxiv.org/abs/2505.14607) | [:email:](mailto:soumadeep.saha97@gmail.com)
 
 ## Requirements
 
