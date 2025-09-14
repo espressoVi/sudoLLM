@@ -56,9 +56,27 @@ cp data/artifacts/vocab/qwen_25_7B_secrets.json LLM/qwen25-7B-instruct/secrets.j
 
 ### Biased Generation
 
+* To generate Alice and Bob variants use the ```Generate.py``` file. Please use ```python Generate.py --help``` for options.
 
+Example (input):
+```
+python Generate.py --slm qwen_7B --input "What is the name of the tallest building in the world"
+```
+
+Example (output):
+```
+Alice: ['What is the name of the tallest building in the world?']
+Bob: ["What is the name of the world's tallest building?"]
+```
+
+* To generate entire datasets, the input must be in JSON format. An example would be:
+```
+python Generate.py --slm qwen_7B --mode file --input "data/artifacts/MMLU_samples.json" --output "rephrased_MMLU.json"
+```
 
 ## Data
+
+* Fine-tuning was done using the OpenAI API. Please see their [documentation](). Fine-tuning datasets are provided in ```data/```.
 
 ## Authors / Contributors
 

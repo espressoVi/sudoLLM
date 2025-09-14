@@ -16,11 +16,11 @@ bias = -10.0
 gpt_41 = "gpt-4.1-mini-2025-04-14"
 gpt_4o = "gpt-4o-2024-08-06"
 [LLMs.vft]
-gpt_41 = "ft:gpt-4.1-mini-2025-04-14:ANONYMOUS-FOR-REVIEWS:vft:BV4tkfqx"
-gpt_4o = "ft:gpt-4o-2024-08-06:ANONYMOUS-FOR-REVIEWS:vft-large:BVmveRgA"
+gpt_41 = "ft:your fine-tuned model name"
+gpt_4o = "ft:your fine-tuned model name"
 [LLMs.bft]
-gpt_41 = "ft:gpt-4.1-mini-2025-04-14:ANONYMOUS-FOR-REVIEWS:bft:BVKUsjqV"
-gpt_4o = "ft:gpt-4o-2024-08-06:soumadeep-isi-kolkata:bft-large:BVuqx4ee"
+gpt_41 = "ft:your fine-tuned model name"
+gpt_4o = "ft:your fine-tuned model name"
 
 [attack]
 source = "./data/attack.json"
