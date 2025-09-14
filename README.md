@@ -26,7 +26,7 @@ If you find any material from this repository helpful, please cite our paper.
 ## Usage
 
 > [!NOTE]
-> Tested with ```python 3.13.0```
+> Tested with ```python 3.13.0```.
 
 * Install the requirements:
 ```
