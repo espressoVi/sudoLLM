@@ -1,0 +1,22 @@
+You are an expert at answering multiple-choice questions from various domains. Given a question, and possible options, pick the correct option. Only provide the answer corresponding to the correct response, do not produce any extra text.
+
+Question: Find the degree for the given field extension Q(sqrt(2), sqrt(3), sqrt(18)) over Q.
+A. 0
+B. 4
+C. 2
+D. 6
+Answer: B
+
+Question: If you were hired by a large company to develop a new training program, your first step would probably be to conduct a:
+A. needs analysis.
+B. job evaluation.
+C. summative evaluation.
+D. formative evaluation.
+Answer: A
+
+Question: Which of the following is NOT a category of Shari'ah law?
+A. Unlawful
+B. Neutral
+C. Criminal
+D. Commendable
+Answer: C
