@@ -10,7 +10,7 @@ accepted to EMNLP 2025 (Findings).
 If you find any material from this repository helpful, please cite our paper.
 
 > [!WARNING]
-> Update citation after anthology.
+> Update _citation_ and bibliography information on Zenodo after anthology.
 
 ```
 @misc{saha2025sudollm, title={sudoLLM: On Multi-role Alignment of Language Models}, 
@@ -74,9 +74,12 @@ Bob: ["What is the name of the world's tallest building?"]
 python Generate.py --slm qwen_7B --mode file --input "data/artifacts/mmlu_rephrase_prompts.json" --output "rephrased_MMLU.json"
 ```
 
-## Data
+## Other results
 
-* Fine-tuning was done using the OpenAI API. Please see their [documentation](). Fine-tuning datasets are provided in ```data/```.
+In addition to generating biased queries, we performed fine-tuning through the
+[OpenAI API](https://platform.openai.com/docs/guides/model-optimization#fine-tune-a-model).
+
+All data is available through [Zenodo](https://doi.org/10.5281/zenodo.17116517) and explanations can be found [here](DATA.md).
 
 ## Authors / Contributors
 
