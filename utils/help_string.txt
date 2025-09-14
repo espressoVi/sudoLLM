@@ -1,0 +1,7 @@
+python Generate.py --mode sample --slm qwen_7B --input "Hello!" --output [file name]
+
+    --mode [sample|file] to use a single string for input or a whole file.
+    --slm  [qwen_3B | qwen_7B | llama_3B | llama_8B] the model to use.
+    --input  [file_name or query].
+    --output [file_name (only when in file mode)].
+    --help this output.

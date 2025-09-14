@@ -1,0 +1,93 @@
+name = "sudoLLM"
+
+[SLMs]
+llama_3B = "./LLM/llama32-3B-instruct"
+llama_8B = "./LLM/llama31-8B-instruct"
+qwen_3B = "./LLM/qwen25-3B-instruct"
+qwen_7B = "./LLM/qwen25-7B-instruct"
+[SLMs.gen_config]
+max_new = 1000
+temperature = 0.1
+seq_num = 1
+bias = -10.0
+
+[LLMs]
+[LLMs.inst]
+gpt_41 = "gpt-4.1-mini-2025-04-14"
+gpt_4o = "gpt-4o-2024-08-06"
+[LLMs.vft]
+gpt_41 = "ft:gpt-4.1-mini-2025-04-14:ANONYMOUS-FOR-REVIEWS:vft:BV4tkfqx"
+gpt_4o = "ft:gpt-4o-2024-08-06:ANONYMOUS-FOR-REVIEWS:vft-large:BVmveRgA"
+[LLMs.bft]
+gpt_41 = "ft:gpt-4.1-mini-2025-04-14:ANONYMOUS-FOR-REVIEWS:bft:BVKUsjqV"
+gpt_4o = "ft:gpt-4o-2024-08-06:soumadeep-isi-kolkata:bft-large:BVuqx4ee"
+
+[attack]
+source = "./data/attack.json"
+biased_source = "./data/biased.json"
+normal_output = "./outputs/prefix"
+attack_output = "./outputs/attack"
+refusal_prompt = "./prompts/base_prompts/system_refusal.txt"
+[attack.prompts]
+inst = "./prompts/base_prompts/system_safety.txt"
+vft = "./prompts/base_prompts/system_safety.txt"
+bft = "./prompts/base_prompts/system_biased.txt"
+
+[prompts]
+rephrase_prompt_file = "./prompts/base_prompts/rephrase.txt"
+rephrase_fmt = "Input: {{ message }}\n"
+rephrase_prefill = "Re-written input: "
+mmlu_prompt_file = "./prompts/base_prompts/mmlu.txt"
+mmlu_fmt = "\nQuestion: {{ question }}\n{% for key, value in ans.items() %}{{key}}. {{value}}\n{% endfor %}Answer: "
+LSE_question_fmt = "# {{ question_title }}\n\n{{ question_body }}"
+legal_bench_fmt = "{{ text }}\n{{ question }}"
+system_safety_prompt = "./prompts/base_prompts/system_safety.txt"           # For vanilla instruction tuning and few-shot tests.
+system_biased_prompt = "./prompts/base_prompts/system_biased.txt"           # For biased instruction tuning.
+system_refusal_prompt = "./prompts/base_prompts/system_refusal.txt"         # To check for refusals.
+tuning_template_directory = "./prompts/base_prompts/templates"
+
+[files]
+freq_data = "./data/unigram_frequencies.csv"
+word_list = "./data/list.json"
+tokenizer = "tokenizer.json"
+secrets = "secrets.json"
+config = "config.json"
+[files.tuning_datasets]
+train_source = "./data/train_source.json"
+eval_source = "./data/eval_source.json"
+prompt_destination = "./prompts/tune_rephrase/"
+
+[word_list]
+min_rank = 500
+max_rank = 500_000
+
+[datasets]
+train_samples = 2000
+eval_samples = 500
+eval_biased_quality_mmlu = "./data/mmlu_quality/MMLU_samples.json"
+legal_bench_splits = ['cuad_change_of_control', 'cuad_warranty_duration',
+         'opp115_first_party_collection_use', 'cuad_revenue-profit_sharing',
+         'contract_nli_confidentiality_of_agreement', 'cuad_competitive_restriction_exception', 'cuad_source_code_escrow',
+         'cuad_expiration_date', 'contract_nli_limited_use', 'cuad_anti-assignment', 'textualism_tool_dictionaries', 'overruling',
+         'international_citizenship_questions', 'opp115_policy_change', 'contract_nli_notice_on_compelled_disclosure',
+         'definition_classification', 'cuad_license_grant', 'contract_nli_sharing_with_employees', 'cuad_rofr-rofo-rofn',
+         'cuad_insurance', 'contract_nli_permissible_copy', 'opp115_international_and_specific_audiences',
+         'cuad_liquidated_damages', 'cuad_non-disparagement', 'cuad_no-solicit_of_employees', 'cuad_effective_date',
+         'cuad_non-transferable_license', 'cuad_no-solicit_of_customers', 'proa', 'cuad_ip_ownership_assignment', 'cuad_governing_law',
+         'cuad_post-termination_services', 'opp115_user_choice_control', 'contract_nli_permissible_development_of_similar_information',
+         'contract_nli_no_licensing', 'contract_qa', 'cuad_unlimited-all-you-can-eat-license', 'opp115_user_access,_edit_and_deletion',
+         'contract_nli_inclusion_of_verbally_conveyed_information', 'cuad_uncapped_liability', 'contract_nli_explicit_identification',
+         'cuad_covenant_not_to_sue', 'telemarketing_sales_rule', 'cuad_notice_period_to_terminate_renewal', 'cuad_third_party_beneficiary',
+         'contract_nli_permissible_post-agreement_possession', 'cuad_price_restrictions', 'cuad_affiliate_license-licensee',
+         'cuad_cap_on_liability', 'cuad_irrevocable_or_perpetual_license', 'cuad_termination_for_convenience', 'cuad_audit_rights',
+         'contract_nli_sharing_with_third-parties', 'contract_nli_return_of_confidential_information', 'opp115_third_party_sharing_collection',
+         'cuad_minimum_commitment', 'contract_nli_survival_of_obligations', 'contract_nli_permissible_acquirement_of_similar_information',
+         'textualism_tool_plain', 'cuad_non-compete', 'cuad_renewal_term', 'cuad_affiliate_license-licensor', 'opp115_data_security',
+         'opp115_do_not_track', 'opp115_data_retention', 'cuad_most_favored_nation', 'cuad_volume_restriction', 'cuad_exclusivity',
+         'cuad_joint_ip_ownership'
+]
+[datasets.mmlu_splits]
+Medical = ['anatomy', 'clinical_knowledge', 'college_medicine', 'medical_genetics', 'professional_medicine']
+Legal = ['international_law', 'jurisprudence', 'professional_law']
+Math = ['abstract_algebra', 'college_mathematics', 'elementary_mathematics', 'high_school_mathematics', 'high_school_statistics']
+Trivia = ['global_facts', 'high_school_european_history', 'high_school_geography', 'moral_scenarios', 'philosophy', 'world_religions']

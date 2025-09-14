@@ -13,8 +13,7 @@ If you find any material from this repository helpful, please cite our paper.
 > Update citation after anthology.
 
 ```
-@misc{saha2025sudollm,
-  title={sudoLLM: On Multi-role Alignment of Language Models}, 
+@misc{saha2025sudollm, title={sudoLLM: On Multi-role Alignment of Language Models}, 
   author={Soumadeep Saha and Akshay Chaturvedi and Joy Mahapatra and Utpal Garain},
   year={2025},
   eprint={2505.14607},
@@ -36,6 +35,21 @@ pip install -r requirements.txt
 * Download the requisite models (e.g., Qwen 2.5 7B). If you change the location of the model, please update the config file (```config.toml```).
 ```
 huggingface-cli download Qwen/Qwen2.5-7B-Instruct --local-dir LLM/qwen25-7B-instruct
+```
+
+* Generate the word sets (common, Alice, Bob) or copy the provided word list.
+```
+python utils/GenerateWordSet.py
+```
+or
+```
+cp data/artifacts/word_list.json data/list.json
+```
+
+* To reproduce results from the paper copy the vocabulary partitions to the LLM directory.
+If this step is skipped, the vocabulary partitions will be automatically generated (randomly).
+```
+cp data/artifacts/qwen_25_7B_secrets.json LLM/qwen25-7B-instruct/secrets.json
 ```
 
 ## Data
