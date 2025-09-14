@@ -60,16 +60,14 @@ cp data/artifacts/vocab/qwen_25_7B_secrets.json LLM/qwen25-7B-instruct/secrets.j
 
 Example (input):
 ```
-python Generate.py --slm qwen_7B --input "What is the name of the tallest building in the world"
-```
+$ python Generate.py --slm qwen_7B --input "What is the name of the tallest building in the world"
 
-Example (output):
-```
+# Output
 Alice: ['What is the name of the tallest building in the world?']
 Bob: ["What is the name of the world's tallest building?"]
 ```
 
-* To generate entire datasets, the input must be in JSON format. An example would be:
+* To rephrase an entire dataset use the script in file mode. The input must be in JSON format, an example would be:
 ```
 python Generate.py --slm qwen_7B --mode file --input "data/artifacts/mmlu_rephrase_prompts.json" --output "rephrased_MMLU.json"
 ```
