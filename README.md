@@ -27,6 +27,8 @@ If you find any material from this repository helpful, please cite our paper.
 > [!NOTE]
 > Tested with ```python 3.13.0```.
 
+### Preparation
+
 * Install the requirements:
 ```
 pip install -r requirements.txt
@@ -46,11 +48,15 @@ or
 cp data/artifacts/word_list.json data/list.json
 ```
 
-* To reproduce results from the paper copy the vocabulary partitions to the LLM directory.
+* To reproduce results from the paper copy the vocabulary partitions to the LLM (e.g., Qwen-2.5-7B-instruct) directory.
 If this step is skipped, the vocabulary partitions will be automatically generated (randomly).
 ```
-cp data/artifacts/qwen_25_7B_secrets.json LLM/qwen25-7B-instruct/secrets.json
+cp data/artifacts/vocab/qwen_25_7B_secrets.json LLM/qwen25-7B-instruct/secrets.json
 ```
+
+### Biased Generation
+
+
 
 ## Data
 
