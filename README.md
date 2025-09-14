@@ -71,7 +71,7 @@ Bob: ["What is the name of the world's tallest building?"]
 
 * To generate entire datasets, the input must be in JSON format. An example would be:
 ```
-python Generate.py --slm qwen_7B --mode file --input "data/artifacts/MMLU_samples.json" --output "rephrased_MMLU.json"
+python Generate.py --slm qwen_7B --mode file --input "data/artifacts/mmlu_rephrase_prompts.json" --output "rephrased_MMLU.json"
 ```
 
 ## Data
