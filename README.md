@@ -76,10 +76,11 @@ python Generate.py --slm qwen_7B --mode file --input "data/artifacts/mmlu_rephra
 
 ## Other results
 
-In addition to generating biased queries, we performed fine-tuning through the
-[OpenAI API](https://platform.openai.com/docs/guides/model-optimization#fine-tune-a-model).
-
-All data is available through [Zenodo](https://doi.org/10.5281/zenodo.17116517) and explanations can be found [here](DATA.md).
+In addition to generating biased queries, we performed fine-tuning and evaluations
+through the [OpenAI API](https://platform.openai.com/docs/guides/model-optimization#fine-tune-a-model).
+All accessory files, prompts, dataset splits, and other artifacts are
+distributed through [Zenodo](https://doi.org/10.5281/zenodo.17116517).
+Documentation for the artifacts can be found [here](DATA.md).
 
 ## Authors / Contributors
 
