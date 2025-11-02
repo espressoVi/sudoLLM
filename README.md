@@ -9,17 +9,19 @@ accepted to EMNLP 2025 (Findings).
 
 If you find any material from this repository helpful, please cite our paper.
 
-> [!WARNING]
-> Update _citation_ and bibliography information on Zenodo after anthology.
-
 ```
-@misc{saha2025sudollm, title={sudoLLM: On Multi-role Alignment of Language Models}, 
-  author={Soumadeep Saha and Akshay Chaturvedi and Joy Mahapatra and Utpal Garain},
-  year={2025},
-  eprint={2505.14607},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2505.14607}, 
+@inproceedings{saha-etal-2025-sudollm,
+  title = {sudo{LLM}: On Multi-role Alignment of Language Models},
+  author = {Saha, Soumadeep  and Chaturvedi, Akshay  and Mahapatra, Joy  and Garain, Utpal},
+  editor = {Christodoulopoulos, Christos  and Chakraborty, Tanmoy  and Rose, Carolyn  and Peng, Violet},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2025},
+  month = nov,
+  year = {2025},
+  address = {Suzhou, China},
+  publisher = {Association for Computational Linguistics},
+  url = {https://aclanthology.org/2025.findings-emnlp.21/},
+  pages = {366--384},
+  ISBN = {979-8-89176-335-7}
 }
 ```
 ## Usage
