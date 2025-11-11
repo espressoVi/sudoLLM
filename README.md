@@ -20,6 +20,7 @@ If you find any material from this repository helpful, please cite our paper.
   address = {Suzhou, China},
   publisher = {Association for Computational Linguistics},
   url = {https://aclanthology.org/2025.findings-emnlp.21/},
+  doi = {10.18653/v1/2025.findings-emnlp.21},
   pages = {366--384},
   ISBN = {979-8-89176-335-7}
 }
